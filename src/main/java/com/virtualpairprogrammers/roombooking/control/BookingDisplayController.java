@@ -2,6 +2,7 @@ package com.virtualpairprogrammers.roombooking.control;
 
 import com.virtualpairprogrammers.roombooking.data.BookingRepository;
 import com.virtualpairprogrammers.roombooking.model.DateRequestCommand;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +13,7 @@ import java.sql.Date;
 import java.util.*;
 
 @Controller
+@RequestMapping("/roombooking")
 public class BookingDisplayController {
 
     @Autowired
@@ -24,7 +26,7 @@ public class BookingDisplayController {
         return new ModelAndView ("home", model);
     }
 
-    @RequestMapping("/roombooking")
+    @RequestMapping("/")
     public ModelAndView homePage() {
         Date date = new Date(new java.util.Date().getTime());
         return showCalendar(date);
