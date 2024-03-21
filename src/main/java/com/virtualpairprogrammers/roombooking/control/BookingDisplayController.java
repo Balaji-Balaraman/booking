@@ -24,7 +24,7 @@ public class BookingDisplayController {
         return new ModelAndView ("home", model);
     }
 
-    @RequestMapping("")
+    @RequestMapping("/roombooking")
     public ModelAndView homePage() {
         Date date = new Date(new java.util.Date().getTime());
         return showCalendar(date);
